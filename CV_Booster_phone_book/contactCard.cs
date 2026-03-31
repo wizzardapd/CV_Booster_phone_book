@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace CV_Booster_phone_book
 {
-    public class contactCard
+    public class ContactCard
     {
 
         // maybe give it an ID? to better find the contact
         public string name; 
-        public int phone;
+        public string phoneNumber;
         public string address;
         public string email;
-        public string notice;
-        public contactCard(string Name, int phoneNumber, string Address, string Email, string Notice)
+        public string note;
+        public ContactCard(string _name, string _phoneNumber, string _address, string _email, string _note)
         {
-            name = Name;
-            phone = phoneNumber;
-            address = Address;
-            email = Email;
-            notice = Notice; 
+            name = _name;
+            phoneNumber = _phoneNumber;
+            address = _address;
+            email = _email;
+            note = _note; 
         }
     }
 }
