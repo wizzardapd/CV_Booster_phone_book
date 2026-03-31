@@ -8,6 +8,8 @@ namespace CV_Booster_phone_book
 {
     public class contactCard
     {
+
+        // maybe give it an ID? to better find the contact
         public string name;
         public int phone;
         public string address;
