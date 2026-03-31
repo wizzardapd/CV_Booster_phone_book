@@ -10,7 +10,7 @@ namespace CV_Booster_phone_book
     {
 
         // maybe give it an ID? to better find the contact
-        public string name;
+        public string name; 
         public int phone;
         public string address;
         public string email;
