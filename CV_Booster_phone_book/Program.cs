@@ -24,8 +24,32 @@ do
 
     switch (keyInfo)
     {
+        // ask for required data, string name, phone, address, email and note. Creates new object of class ContactCard. 
+        // Uses AddContact Method to save the new object in a List<ContactCard>
         case 1:
-            contactService.AddContact();
+
+            if (keyInfo == 0)
+            {
+                Console.WriteLine("User input is not correct.");
+            }
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Phone: ");
+            string phone = Console.ReadLine();
+
+            Console.Write("Address: ");
+            string address = Console.ReadLine();
+
+            Console.Write("Email: ");
+            string email = Console.ReadLine();
+
+            Console.Write("Note: ");
+            string note = Console.ReadLine();
+
+            ContactCard newContact = new ContactCard(name, phone, address, email, note);
+
+            contactService.AddContact(newContact);
             break;
 
         case 2:

@@ -16,9 +16,9 @@ namespace CV_Booster_phone_book
 
         // method that adds contact, needs all fields to be filled in order to add the concact to the List<contactCard> contacts 
         // maybe a check if all required fields are filled?
-        public void AddContact() 
-        { 
-            Console.WriteLine("1 has been pressed"); 
+        public void AddContact(ContactCard contact) 
+        {
+            contacts.Add(contact);
         }
 
         // method that deleted the requested contact, maybe use an ID to identify the contact?
@@ -34,10 +34,15 @@ namespace CV_Booster_phone_book
         }
 
         // method that returns all the elements of List<contactCard>
-        public void GetAllContacts() 
-        { 
-            Console.WriteLine("4 has been pressed"); 
-        }
+
+        /* 
+        not working now, have to see why
+        */
+
+        //public List<ContactCard> GetAllContacts() 
+        //{
+        //    return contacts; 
+        //}
 
         // method that searches the requested id of List<contactCard> contacts
         public void SearchContact() 
