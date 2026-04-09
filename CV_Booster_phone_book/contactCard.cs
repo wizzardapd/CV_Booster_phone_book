@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CV_Booster_phone_book
 {
@@ -22,6 +23,13 @@ namespace CV_Booster_phone_book
             address = _address;
             email = _email;
             note = _note; 
+        }
+
+
+        // returns only the name of the contact
+        public override string ToString()
+        {
+            return $"{name}";
         }
     }
 }

@@ -61,7 +61,21 @@ do
             break;
 
         case 4:
-            contactService.GetAllContacts();
+
+            var contacts = contactService.GetAllContacts();
+
+            if (contacts.Count == 0)
+            {
+                Console.WriteLine("No contacts found.");
+            }
+
+            else
+            {
+                foreach (var contact in contacts)
+                {
+                    Console.WriteLine(contact);
+                }
+            }
             break;
 
         case 5:

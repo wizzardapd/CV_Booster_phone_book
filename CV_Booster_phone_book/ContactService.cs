@@ -39,10 +39,10 @@ namespace CV_Booster_phone_book
         not working now, have to see why
         */
 
-        //public List<ContactCard> GetAllContacts() 
-        //{
-        //    return contacts; 
-        //}
+        public List<ContactCard> GetAllContacts()
+        {
+            return contacts;
+        }
 
         // method that searches the requested id of List<contactCard> contacts
         public void SearchContact() 
