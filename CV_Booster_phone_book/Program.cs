@@ -9,7 +9,7 @@ var exit = false;
 
 do
 {
-    Console.WriteLine("CV_booster_phone_book " +
+    Console.WriteLine(" \n CV_booster_phone_book " +
     "\n  " +
     "\n main menu " +
     "\n 1. add contact " +
@@ -18,7 +18,7 @@ do
     "\n 4. show contacts " +
     "\n 5. search contact " +
     "\n 6. export contacts  " +
-    "\n 7. exit");
+    "\n 7. exit" + " ");
 
     int keyInfo = int.Parse(Console.ReadLine());
 
@@ -47,12 +47,29 @@ do
             Console.Write("Note: ");
             string note = Console.ReadLine();
 
+            
+
             ContactCard newContact = new ContactCard(name, phone, address, email, note);
 
             contactService.AddContact(newContact);
             break;
 
         case 2:
+
+            Console.WriteLine("Select your contact to delete. Enter the number.");
+
+            var contacts_ = contactService.GetAllContacts();
+            foreach (var contact in contacts_)
+            {
+                for(int i = 0; i < contacts_.Count; i++)
+                {
+                    Console.WriteLine($"{i}. + {contact}");
+                }
+                
+            }
+
+            int deleteContact = int.Parse(Console.ReadLine());
+
             contactService.DeleteContact();
             break;
 
