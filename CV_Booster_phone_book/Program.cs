@@ -74,7 +74,24 @@ do
             break;
 
         case 3:
-            contactService.UpdateContact();
+
+            Console.Write("New Name: ");
+            string Name = Console.ReadLine();
+
+            Console.Write("New Phone: ");
+            string Phone = Console.ReadLine();
+
+            Console.Write("New Address: ");
+            string Address = Console.ReadLine();
+
+            Console.Write("New Email: ");
+            string Email = Console.ReadLine();
+
+            Console.Write("New Note: ");
+            string Note = Console.ReadLine();
+
+            contactService.UpdateContact(Name, Phone, Address, Email, Note);
+
             break;
 
         case 4:
@@ -96,7 +113,25 @@ do
             break;
 
         case 5:
-            contactService.SearchContact();
+
+            Console.Write("Search term: ");
+            string searchTerm = Console.ReadLine();
+
+            List<ContactCard> results =
+                contactService.SearchContact(searchTerm);
+
+            if (results.Count == 0)
+            {
+                Console.WriteLine("No matches found.");
+            }
+            else
+            {
+                foreach (ContactCard contact in results)
+                {
+                    Console.WriteLine(contact);
+                }
+            }
+
             break;
 
         case 6:

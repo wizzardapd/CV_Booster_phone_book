@@ -31,7 +31,7 @@ namespace CV_Booster_phone_book
         // returns only the name of the contact 
         public override string ToString()
         {
-            return $" [{id}] {name} | {phoneNumber} | {email}";
+            return $" [{id}] {name} | phone: {phoneNumber} | email: {email}";
         }
     }
 }

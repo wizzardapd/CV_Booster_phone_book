@@ -28,26 +28,56 @@ namespace CV_Booster_phone_book
         }
 
         // Access an element of List<contactCard> contacts and update it's content
-        public void UpdateContact() 
+        public void UpdateContact(
+
+            string newName,
+            string newPhoneNumber,
+            string newAddress,
+            string newEmail,
+            string newNote)
         {
-            Console.WriteLine("3 has been pressed");
+            ContactCard contact = contacts.FirstOrDefault();
+
+            if (contact == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            contact.name = newName;
+            contact.phoneNumber = newPhoneNumber;
+            contact.address = newAddress;
+            contact.email = newEmail;
+            contact.note = newNote;
+
+            Console.WriteLine("Contact updated successfully.");
         }
 
         // method that returns all the elements of List<contactCard>
-
-        /* 
-        not working now, have to see why
-        */
 
         public List<ContactCard> GetAllContacts()
         {
             return contacts;
         }
 
-        // method that searches the requested id of List<contactCard> contacts
-        public void SearchContact() 
+        // method that searches the requested searchTerm of all elements List<contactCard> contacts
+        public List<ContactCard> SearchContact (string searchTerm) 
         { 
-            Console.WriteLine("5 has been pressed"); 
+            if (searchTerm == " ")
+            {
+                return new List<ContactCard>();
+            }
+
+            else
+            {
+                return contacts
+                .Where(contact =>
+                    contact.name.ToLower().Contains(searchTerm) ||
+                    contact.phoneNumber.ToLower().Contains(searchTerm) ||
+                    contact.email.ToLower().Contains(searchTerm) ||
+                    contact.address.ToLower().Contains(searchTerm))
+                .ToList();
+            }
         }
 
         // method that exports all the contacts of List<contactCard> contacts, maybe in a CSV? not quite sure yet
