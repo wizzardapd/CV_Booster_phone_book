@@ -81,9 +81,26 @@ namespace CV_Booster_phone_book
         }
 
         // method that exports all the contacts of List<contactCard> contacts, maybe in a CSV? not quite sure yet
-        public void Export() 
-        { 
-            Console.WriteLine("6 has been pressed"); 
+        public void Export()
+        {
+
+            string filePath = "C:\\Users\\Anh\\Documents\\contacts.csv";
+
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine("Id, Name, PhoneNumber, Address, Email, Note");
+
+                foreach (ContactCard contact in contacts)
+                {
+                    writer.WriteLine(
+                        $"{contact.id}," +
+                        $"{contact.name}," +
+                        $"{contact.phoneNumber}," +
+                        $"{contact.address}," +
+                        $"{contact.email}," +
+                        $"{contact.note}");
+                }
+            }
         }
 
     }
