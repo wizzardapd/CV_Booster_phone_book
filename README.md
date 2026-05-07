@@ -1,1 +1,1 @@
-[![solarized dualmode](https://github.com/wizzardapd/CV_Booster_phone_book/Workflow.png)](#Workflow)
+![Alt text](/relative/path/to/Workflow.png?raw=true "Optional Title")
